@@ -27,6 +27,10 @@ def get_xml_output(output):
     return xml_output
 
 
+@app.route("/",methods=['GET'])
+def index():
+    return "<marquee> <Big> Hello World !!! </Big> </marquee>"
+
 @app.route("/getCurrentWeather", methods=['POST'])
 def get_current_weather():
     try:
@@ -72,4 +76,4 @@ def get_current_weather():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5432)
+    app.run(host='0.0.0.0', port=5432,debug=True)
